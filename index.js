@@ -19,6 +19,7 @@ if (!github.context.ref.startsWith('refs/tags/')) {
 const tag = github.context.ref.substring(tagRef.length);
 console.log('version:' + tag);
 
+console.log('path:' + ab_path);
 // add spec repo
 if (shell.exec(`pod repo add ${spec_repo_name} ${spec_repo_url}`).code !== 0) {
     core.setFailed('add spec repo failed');
