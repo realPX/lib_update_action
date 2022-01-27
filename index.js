@@ -27,10 +27,14 @@ if (shell.exec(`pod repo add ${spec_repo_name} ${spec_repo_url}`).code !== 0) {
     shell.exit(1);
 }
 // install fastlane
-// if (shell.exec('brew install fastlane').code !== 0) {
-//     core.setFailed('install fastlane failed');
-//     shell.exit(1);
-// }
+if (shell.exec('brew install fastlane').code !== 0) {
+    core.setFailed('install fastlane failed');
+    shell.exit(1);
+}
+if (shell.exec('gem install fastlane').code !== 0) {
+    core.setFailed('update fastlane failed');
+    shell.exit(1);
+}
 // change version at spec file
 if (shell.exec(`fastlane run version_bump_podspec path:${ab_path} version_number:${tag}`).code !== 0) {
     core.setFailed('spec file edit failed');
