@@ -40,10 +40,10 @@ if (shell.exec('gem install fastlane').code !== 0) {
 //     core.setFailed('spec file edit failed');
 //     shell.exit(1);
 // }
-if (shell.exec(`fastlane run version_bump_podspec path:${'../PanKit.podspec'} version_number:${tag}`).code !== 0) {
-    core.setFailed('spec file edit failed');
-    shell.exit(1);
-}
+// if (shell.exec(`fastlane run version_bump_podspec path:${'../PanKit.podspec'} version_number:${tag}`).code !== 0) {
+//     core.setFailed('spec file edit failed');
+//     shell.exit(1);
+// }
 // lint spec
 if (shell.exec(`pod spec lint ${ab_path} ${lint_args}`).code !== 0) {
     core.setFailed('lint spec failed');
