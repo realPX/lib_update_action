@@ -9,7 +9,8 @@ const lint_args = core.getInput('lint_args');
 const push_args = core.getInput('push_args');
 const ab_path = `${process.env.GITHUB_WORKSPACE}${spec_file_path}`;
 // const ab_path = '/Users/runner/work/PanKit/PanKitSpec.podspec';
-const spec_repo_name = 'private_spec_repo';
+// const spec_repo_name = 'private_spec_repo';
+const spec_repo_name = core.getInput('private_spec_repo');
 
 
 const tagRef = 'refs/tags/';
